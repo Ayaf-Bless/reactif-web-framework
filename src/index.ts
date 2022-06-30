@@ -6,4 +6,5 @@ user.set({ age: 16 });
 user.on("click", () => {
   console.log("Event");
 });
+
 user.trigger("cli");
