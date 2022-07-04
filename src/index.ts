@@ -1,5 +1,5 @@
-import axios from "axios";
+import { User } from "./models/User";
 
-axios.get("http://localhost:3000/users/1").then((el) => {
-  console.log(el.data);
-});
+const user = new User({ id: 1 });
+
+user.fetch();
