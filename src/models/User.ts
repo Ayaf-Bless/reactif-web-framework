@@ -1,5 +1,6 @@
 import { Eventing } from "./Eventing";
 import { Sync } from "./Sync";
+import { Attribute } from "./Attribute";
 
 export interface UserProps {
   name?: string;
@@ -10,15 +11,12 @@ const rootUrl = "http://localhost/users";
 
 export class User {
   public events: Eventing = new Eventing();
+
   public sync: Sync<UserProps> = new Sync<UserProps>(rootUrl);
-  constructor(private data: UserProps) {}
 
-  get(propName: string): number | string {
-    return this.data[propName];
-  }
+  public attribute: Attribute<UserProps>;
 
-  set(update: UserProps): void {
-    // @ts-ignore
-    Object.assign(this.data, update);
+  constructor(attrs: UserProps) {
+    this.attribute = new Attribute<UserProps>(attrs);
   }
 }
