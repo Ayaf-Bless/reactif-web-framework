@@ -45,4 +45,9 @@ export class User {
       this.set(res.data);
     });
   }
+
+  set(update: UserProps): void {
+    this.attribute.set(update);
+    this.events.trigger("change");
+  }
 }
