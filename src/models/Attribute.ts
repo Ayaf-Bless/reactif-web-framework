@@ -9,4 +9,8 @@ export class Attribute<T> {
     // @ts-ignore
     Object.assign(this.data, update);
   }
+
+  getAll(): T {
+    return this.data;
+  }
 }
