@@ -6,7 +6,7 @@ export class Attribute<T> {
   };
 
   set(update: T): void {
-    // @ts-ignore
+    // @ts-ignore 1
     Object.assign(this.data, update);
   }
 
